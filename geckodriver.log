@@ -230,3 +230,13 @@ Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openv
 Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
 1525637406072	Marionette	INFO	Listening on port 63107
 1525637407152	Marionette	WARN	TLS certificate errors will be ignored for this session
+1525639262712	geckodriver	INFO	Listening on 127.0.0.1:49512
+1525639265818	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525639266428	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525639268070	Marionette	INFO	Listening on port 49524
+1525639268984	Marionette	WARN	TLS certificate errors will be ignored for this session

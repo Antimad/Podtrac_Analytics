@@ -5,8 +5,17 @@ from selenium.common import exceptions
 import sqlite3
 from passlib.hash import sha256_crypt
 import pandas as pd
-from selenium.webdriver.support.ui import WebDriverWait
 import time
+
+Shows = ["KCRW's Left, Right & Center", "KCRW's Good Food", "KCRW's UnFictional", "KCRW's Today's Top Tune",
+         "HereBeMonsters", "KCRW's To the Point", "KCRW's The Business", "KCRW's The Treatment", "Lost Notes",
+         "KCRW's Bookworm", "KCRW's Design and Architecture", "KCRW's Press Play with Madeleine Brand",
+         "KCRW's Film Reviews", "KCRW's Scheer Intelligence - KCRW.com", "KCRW's Martini Shot",
+         "KCRW's Art Talk - KCRW.com", "The Organist", "KCRW's Hollywood Breakdown",
+         "The Document - KCRW, Matt Holzman", "Guest DJ Project", "Orange County Line",
+         "KCRW's Le Show (Harry Shearer)", "Screengrab", "The 805",
+         "One Year Later - KCRW, Jamil Smith, Jennifer Rubin, Ruben Navarrette, Jr.",
+         "KCRW's Below The Ten: Life in South LA - KCRW.com", "Sangre Celestial", "Celestial Blood"]
 
 status = True
 database = "C:\\Users\\Uchenna\\Documents\\Python\\KCRW Source Files\\Credentials.db"
@@ -96,6 +105,7 @@ def navigation_loop(bool):
 
 navigation_loop(True)
 print('loop ended')
+
 options = Select(driver.find_element_by_id('podcastList'))
 options.select_by_visible_text('Celestial Blood')
 print('Done selecting, now getting html source')
