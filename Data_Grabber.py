@@ -95,7 +95,6 @@ def navigation_loop(bool):
 
 navigation_loop(True)
 
-time.sleep(5)
 options = Select(driver.find_element_by_id('podcastList'))
 options.select_by_visible_text('Celestial Blood')
 
