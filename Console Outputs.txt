@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:/Users/Uchenna/Documents/Python/Podtrac Analytics/Scraper.py", line 64, in <module>
+    element = element.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div/div[1]/ul/li[2]/a')
+  File "C:\Users\Uchenna\AppData\Local\Programs\Python\Python35-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 351, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\Uchenna\AppData\Local\Programs\Python\Python35-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 645, in find_element
+    {"using": by, "value": value})['value']
+  File "C:\Users\Uchenna\AppData\Local\Programs\Python\Python35-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 628, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Uchenna\AppData\Local\Programs\Python\Python35-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 312, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Uchenna\AppData\Local\Programs\Python\Python35-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 237, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: The element reference of <a href="/dashboard/jeDwu9K7QK-N/reports/measurement"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
+
