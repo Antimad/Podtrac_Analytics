@@ -1,10 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from selenium.common import exceptions
 import sqlite3
 from passlib.hash import sha256_crypt
 import pandas as pd
-from selenium.webdriver.support.ui  import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
+import time
 
 status = True
 database = "C:\\Users\\Uchenna\\Documents\\Python\\KCRW Source Files\\Credentials.db"
@@ -44,17 +46,17 @@ element.send_keys(Keys.ENTER)
 # Page is logged in
 
 def find(pointer):
-    element = pointer.find_element_by_xpath('//*[@id="tabs"]/ul/li[2]/a')
-    if element:
-        return element
+    elem = pointer.find_element_by_xpath('//*[@id="tabs"]/ul/li[2]/a')
+    if elem:
+        return elem
     else:
         return False
 
 
 # Navigating to Show information
-element = WebDriverWait(driver,15).until(find)
-# element = driver.find_element_by_xpath('//*[@id="tabs"]/ul/li[2]/a')
-element.click()                 # Clicks 'Audience' tab, top right
+# element = WebDriverWait(driver, 15).until(find)
+time.sleep(4)
+
 
 element = driver.find_element_by_xpath('/html/body/div[3]/div/div/div/ul/li[1]/a')
 element.click()                 # Clicks the Measurement Reports button
