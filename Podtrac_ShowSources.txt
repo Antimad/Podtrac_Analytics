@@ -1,0 +1,607 @@
+<html><head>
+    
+    <title>
+	Reports
+</title>
+    <link href="/style/site-combined.8A6BB2872C897815D89B806C78693EF4.css" rel="stylesheet" type="text/css">
+    <style>
+        .g { width: 960px; margin: 0 auto; }
+        /*.icon-cell { width: 36px; }*/
+        /*.icon { width: 32px; height: 32px; }*/
+    </style>
+
+    
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script>
+        var _rollbarConfig = {
+            accessToken: "39acd465bc5244d196d4d68ee0eef830",
+            captureUncaught: true,
+            captureUnhandledRejections: true,
+            payload: {
+                environment: "production"
+            }
+        };
+        !function (r) { function e(n) { if (o[n]) return o[n].exports; var t = o[n] = { exports: {}, id: n, loaded: !1 }; return r[n].call(t.exports, t, t.exports, e), t.loaded = !0, t.exports } var o = {}; return e.m = r, e.c = o, e.p = "", e(0) }([function (r, e, o) { "use strict"; var n = o(1), t = o(4); _rollbarConfig = _rollbarConfig || {}, _rollbarConfig.rollbarJsUrl = _rollbarConfig.rollbarJsUrl || "https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.3.9/rollbar.min.js", _rollbarConfig.async = void 0 === _rollbarConfig.async || _rollbarConfig.async; var a = n.setupShim(window, _rollbarConfig), l = t(_rollbarConfig); window.rollbar = n.Rollbar, a.loadFull(window, document, !_rollbarConfig.async, _rollbarConfig, l) }, function (r, e, o) { "use strict"; function n(r) { return function () { try { return r.apply(this, arguments) } catch (r) { try { console.error("[Rollbar]: Internal error", r) } catch (r) { } } } } function t(r, e) { this.options = r, this._rollbarOldOnError = null; var o = s++; this.shimId = function () { return o }, "undefined" != typeof window && window._rollbarShims && (window._rollbarShims[o] = { handler: e, messages: [] }) } function a(r, e) { if (r) { var o = e.globalAlias || "Rollbar"; if ("object" == typeof r[o]) return r[o]; r._rollbarShims = {}, r._rollbarWrappedError = null; var t = new p(e); return n(function () { e.captureUncaught && (t._rollbarOldOnError = r.onerror, i.captureUncaughtExceptions(r, t, !0), i.wrapGlobals(r, t, !0)), e.captureUnhandledRejections && i.captureUnhandledRejections(r, t, !0); var n = e.autoInstrument; return e.enabled !== !1 && (void 0 === n || n === !0 || "object" == typeof n && n.network) && r.addEventListener && (r.addEventListener("load", t.captureLoad.bind(t)), r.addEventListener("DOMContentLoaded", t.captureDomContentLoaded.bind(t))), r[o] = t, t })() } } function l(r) { return n(function () { var e = this, o = Array.prototype.slice.call(arguments, 0), n = { shim: e, method: r, args: o, ts: new Date }; window._rollbarShims[this.shimId()].messages.push(n) }) } var i = o(2), s = 0, d = o(3), c = function (r, e) { return new t(r, e) }, p = d.bind(null, c); t.prototype.loadFull = function (r, e, o, t, a) { var l = function () { var e; if (void 0 === r._rollbarDidLoad) { e = new Error("rollbar.js did not load"); for (var o, n, t, l, i = 0; o = r._rollbarShims[i++];)for (o = o.messages || []; n = o.shift();)for (t = n.args || [], i = 0; i < t.length; ++i)if (l = t[i], "function" == typeof l) { l(e); break } } "function" == typeof a && a(e) }, i = !1, s = e.createElement("script"), d = e.getElementsByTagName("script")[0], c = d.parentNode; s.crossOrigin = "", s.src = t.rollbarJsUrl, o || (s.async = !0), s.onload = s.onreadystatechange = n(function () { if (!(i || this.readyState && "loaded" !== this.readyState && "complete" !== this.readyState)) { s.onload = s.onreadystatechange = null; try { c.removeChild(s) } catch (r) { } i = !0, l() } }), c.insertBefore(s, d) }, t.prototype.wrap = function (r, e, o) { try { var n; if (n = "function" == typeof e ? e : function () { return e || {} }, "function" != typeof r) return r; if (r._isWrap) return r; if (!r._rollbar_wrapped && (r._rollbar_wrapped = function () { o && "function" == typeof o && o.apply(this, arguments); try { return r.apply(this, arguments) } catch (o) { var e = o; throw "string" == typeof e && (e = new String(e)), e._rollbarContext = n() || {}, e._rollbarContext._wrappedSource = r.toString(), window._rollbarWrappedError = e, e } }, r._rollbar_wrapped._isWrap = !0, r.hasOwnProperty)) for (var t in r) r.hasOwnProperty(t) && (r._rollbar_wrapped[t] = r[t]); return r._rollbar_wrapped } catch (e) { return r } }; for (var u = "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","), f = 0; f < u.length; ++f)t.prototype[u[f]] = l(u[f]); r.exports = { setupShim: a, Rollbar: p } }, function (r, e) { "use strict"; function o(r, e, o) { if (r) { var t; "function" == typeof e._rollbarOldOnError ? t = e._rollbarOldOnError : r.onerror && !r.onerror.belongsToShim && (t = r.onerror, e._rollbarOldOnError = t); var a = function () { var o = Array.prototype.slice.call(arguments, 0); n(r, e, t, o) }; a.belongsToShim = o, r.onerror = a } } function n(r, e, o, n) { r._rollbarWrappedError && (n[4] || (n[4] = r._rollbarWrappedError), n[5] || (n[5] = r._rollbarWrappedError._rollbarContext), r._rollbarWrappedError = null), e.handleUncaughtException.apply(e, n), o && o.apply(r, n) } function t(r, e, o) { if (r) { "function" == typeof r._rollbarURH && r._rollbarURH.belongsToShim && r.removeEventListener("unhandledrejection", r._rollbarURH); var n = function (r) { var o, n, t; try { o = r.reason } catch (r) { o = void 0 } try { n = r.promise } catch (r) { n = "[unhandledrejection] error getting `promise` from event" } try { t = r.detail, !o && t && (o = t.reason, n = t.promise) } catch (r) { t = "[unhandledrejection] error getting `detail` from event" } o || (o = "[unhandledrejection] error getting `reason` from event"), e && e.handleUnhandledRejection && e.handleUnhandledRejection(o, n) }; n.belongsToShim = o, r._rollbarURH = n, r.addEventListener("unhandledrejection", n) } } function a(r, e, o) { if (r) { var n, t, a = "EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(","); for (n = 0; n < a.length; ++n)t = a[n], r[t] && r[t].prototype && l(e, r[t].prototype, o) } } function l(r, e, o) { if (e.hasOwnProperty && e.hasOwnProperty("addEventListener")) { for (var n = e.addEventListener; n._rollbarOldAdd && n.belongsToShim;)n = n._rollbarOldAdd; var t = function (e, o, t) { n.call(this, e, r.wrap(o), t) }; t._rollbarOldAdd = n, t.belongsToShim = o, e.addEventListener = t; for (var a = e.removeEventListener; a._rollbarOldRemove && a.belongsToShim;)a = a._rollbarOldRemove; var l = function (r, e, o) { a.call(this, r, e && e._rollbar_wrapped || e, o) }; l._rollbarOldRemove = a, l.belongsToShim = o, e.removeEventListener = l } } r.exports = { captureUncaughtExceptions: o, captureUnhandledRejections: t, wrapGlobals: a } }, function (r, e) { "use strict"; function o(r, e) { this.impl = r(e, this), this.options = e, n(o.prototype) } function n(r) { for (var e = function (r) { return function () { var e = Array.prototype.slice.call(arguments, 0); if (this.impl[r]) return this.impl[r].apply(this.impl, e) } }, o = "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","), n = 0; n < o.length; n++)r[o[n]] = e(o[n]) } o.prototype._swapAndProcessMessages = function (r, e) { this.impl = r(this.options); for (var o, n, t; o = e.shift();)n = o.method, t = o.args, this[n] && "function" == typeof this[n] && ("captureDomContentLoaded" === n || "captureLoad" === n ? this[n].apply(this, [t[0], o.ts]) : this[n].apply(this, t)); return this }, r.exports = o }, function (r, e) { "use strict"; r.exports = function (r) { return function (e) { if (!e && !window._rollbarInitialized) { r = r || {}; for (var o, n, t = r.globalAlias || "Rollbar", a = window.rollbar, l = function (r) { return new a(r) }, i = 0; o = window._rollbarShims[i++];)n || (n = o.handler), o.handler._swapAndProcessMessages(l, o.messages); window[t] = n, window._rollbarInitialized = !0 } } } }]);
+    </script>
+    <script src="/javascript/site-combined.0324004D54BBBE9D8A64A5EBC43BAAB6.js" type="text/javascript"></script>
+
+    <script src="/player/v2/script/player-combined.js?ver=201804"></script>
+    <script>
+        Podtrac.Player.root = "/player/v2";
+    </script>
+
+    
+<style type="text/css" data-glamor=""></style></head>
+<body>
+    
+
+    
+<div class="top"><div class="inner">
+    <div class="row">
+        <div class="column span-6">
+            <a href="http://publisher.podtrac.com">Podtrac Home</a> 
+            
+                &nbsp;|&nbsp;
+                <a href="/">Publisher Dashboard</a>
+            
+        </div>
+        <div class="column span-6 user-info">
+        KCRW Digital (kcrwdigital@kcrw.org) &nbsp;|&nbsp;
+            <a href="/account/edit">Your Account</a> &nbsp;|&nbsp;
+            <a href="/account/logout">Logout</a>
+        
+        </div>
+    </div>
+</div></div>
+
+
+
+
+<div class="header">
+    <div class="row">
+        
+    <div id="tabs" class="column span-12">
+        <a id="logo-sm" href="/"><span class="replaced">Podtrac</span></a>
+
+        
+        <ul>
+        
+            <li class="">
+                <a href="/dashboard/jeDwu9K7QK-N">Podcasts</a>
+            </li>
+        
+            <li class="selected">
+                <a href="/dashboard/jeDwu9K7QK-N/reports">Audience</a>
+            </li>
+        
+        </ul>
+    </div>
+
+    </div>
+</div>
+<div class="main">
+    
+    <div style="padding: 0 0 40px 0;">    
+  
+    <script type="text/javascript">
+        $(function () {
+            $('select').change(function () {
+                document.location = $(this).val();
+            });
+        });
+    </script>
+
+<div class="report">
+    <div class="row">
+        <div class="column span-12">
+
+            <table class="noborder tight" style="width: 100%;">
+                <tbody><tr>
+                    <td class="tight">
+                        <h1 class="tagline">Weekly Unique Downloads by Source</h1>
+                        <p class="tagline">Last updated: 5/5/2018</p>
+                    </td>
+                    <td class="tight">
+                        <table style="float: right;">
+                            <tbody><tr>
+                            
+                                <td>Select a show:</td>
+                                <td><select id="podcastList" name="podcastList"><option selected="selected" value="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/source/weekly/04-02-2018">Celestial Blood</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/_cqXCMEXCJX9/4DNb3453biDg/source/weekly/04-02-2018">Guest DJ Project</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/pKXoym73Pwyk/4DNb3453biDg/source/weekly/04-02-2018">HereBeMonsters</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/2iSGcnI3SELa/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Art Talk - KCRW.com</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/49gIYXDnf2fj/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Below The Ten: Life in South LA - KCRW.com</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/AjQsm9fAg-4C/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Bookworm</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/xxs1MfPgZwTH/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Design and Architecture</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/Gs8sBXZrZVEa/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Film Reviews</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/xDyjPylMjPTE/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Good Food</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/oLA44rNLnCmg/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Hollywood Breakdown</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/b-fFK-qzBzFv/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Le Show (Harry Shearer)</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/6neaNO-VgPXq/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Left, Right &amp; Center</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/CYVdekhPhzwJ/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Martini Shot</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/gymcaMGLUCOD/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Morning Becomes Eclectic</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/KYKGY1868P4p/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Morning Becomes Eclectic Video</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/qI3bqXbJwKCo/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Off the Block - KCRW</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/O_94GudLrgI7/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Politics of Culture</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/GA-ZFqrT438Y/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Press Play with Madeleine Brand</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/iruvzsTJ0IWK/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Scheer Intelligence - KCRW.com</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/-DDcR2bd_JT4/4DNb3453biDg/source/weekly/04-02-2018">KCRW's The Business</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/9mi3i7w9zEv2/4DNb3453biDg/source/weekly/04-02-2018">KCRW's The Treatment</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/gBEtUCpYJLeA/4DNb3453biDg/source/weekly/04-02-2018">KCRW's To the Point</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/1zSNuZf9fMjX/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Today's Top Tune</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/eot_NUY-qbR6/4DNb3453biDg/source/weekly/04-02-2018">KCRW's UnFictional</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/I87kqIW6OCoj/4DNb3453biDg/source/weekly/04-02-2018">KCRW's Which Way L.A.?</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/cU5jfzg2jj9x/4DNb3453biDg/source/weekly/04-02-2018">Lost Notes</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/dpOtzv51Udt2/4DNb3453biDg/source/weekly/04-02-2018">One Year Later - KCRW, Jamil Smith, Jennifer Rubin, Ruben Navarrette, Jr.</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/DTjpBOYrgnwN/4DNb3453biDg/source/weekly/04-02-2018">Orange County Line</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/9t_iUuvF8jv2/4DNb3453biDg/source/weekly/04-02-2018">Sangre Celestial</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/WavnHTTGVvBZ/4DNb3453biDg/source/weekly/04-02-2018">Screengrab</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/tUngGAEdnq-1/4DNb3453biDg/source/weekly/04-02-2018">The 805</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/m2Wq3xhdZDKb/4DNb3453biDg/source/weekly/04-02-2018">The Document - KCRW, Matt Holzman</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/Lb1XrThZlxAt/4DNb3453biDg/source/weekly/04-02-2018">The Organist</option>
+<option value="/dashboard/jeDwu9K7QK-N/reports/measurement/Qiyo7r47Z4JC/4DNb3453biDg/source/weekly/04-02-2018">This...Is Interesting</option>
+</select></td>
+                            
+                            </tr>
+                            
+           
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column span-12">
+            <div class="report-tabs">
+                <ul>
+                    <li class=""><a href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/episode/weekly/04-02-2018">By Episode</a></li>
+                    <li class="selected"><a href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/source/weekly/04-02-2018">By Source</a></li>
+                    <li class=""><a href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/country/weekly/04-02-2018">By Country</a></li>
+                </ul> 
+            </div>
+            <div class="report-chart">
+            
+                <div class="report-sub-nav">
+                    <div class="report-prev">
+                        <a href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/source/weekly/02-19-2018">previous period</a>
+                    </div>
+                    <div class="report-next" style="float: right;">
+                        
+                    </div>
+                    <div class="report-period">
+                    <a class="" href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/source/daily/_">Daily</a> |
+                    <a class="selected" href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/source/weekly/_">Weekly</a> |
+                    <a class="" href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/source/monthly/_">Monthly</a> |
+                    <a class="" href="/dashboard/jeDwu9K7QK-N/reports/measurement/w4Ws7voeqgTD/4DNb3453biDg/source/quarterly/_">Quarterly</a>
+                    </div>
+                </div>
+
+
+                <div style="text-align: center;">
+                
+                 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" title="Downloads by Source" width="650" height="200">
+                    <param name="movie" value="/flash/stackedline_and_piechart.swf?c0=UNKNOWN|12|36|63|28|11|0&amp;c1=IPhone (AppleCoreMedia)|16|11|21|26|19|0&amp;c2=Mozilla - Windows|0|8|0|0|9|0&amp;c3=iTunes - Unspecified OS|2|0|0|7|5|0&amp;c4=iTunes - Windows|0|0|0|0|2|0&amp;c5=IPod (AppleCoreMedia)|0|0|0|0|8|0&amp;c6=Mozilla - Android|0|8|0|0|0|0&amp;c7=iTunes - Macintosh|3|0|2|0|1|0&amp;c8=IPad (AppleCoreMedia)|2|0|0|1|2|0&amp;xaxis=04/02|04/09|04/16|04/23|04/30|05/07">
+                    <param name="quality" value="high">
+                    <embed src="/flash/stackedline_and_piechart.swf?c0=UNKNOWN|12|36|63|28|11|0&amp;c1=IPhone (AppleCoreMedia)|16|11|21|26|19|0&amp;c2=Mozilla - Windows|0|8|0|0|9|0&amp;c3=iTunes - Unspecified OS|2|0|0|7|5|0&amp;c4=iTunes - Windows|0|0|0|0|2|0&amp;c5=IPod (AppleCoreMedia)|0|0|0|0|8|0&amp;c6=Mozilla - Android|0|8|0|0|0|0&amp;c7=iTunes - Macintosh|3|0|2|0|1|0&amp;c8=IPad (AppleCoreMedia)|2|0|0|1|2|0&amp;xaxis=04/02|04/09|04/16|04/23|04/30|05/07" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="650" height="200">
+                    
+                 </object>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row"><div class="column span-12">
+        <h3>iTunes</h3>
+    </div></div>
+    
+
+    <div class="row">
+    
+        <div class="column span-12">
+            <table width="100%">
+                
+                        <tbody><tr class="group-row">
+                            <th class="group-label">
+                                Source
+                            </th>
+                            <th>All Time</th>
+                            
+                            
+                            <th>04/02</th>
+                            
+                            <th>04/09</th>
+                            
+                            <th>04/16</th>
+                            
+                            <th>04/23</th>
+                            
+                            <th>04/30</th>
+                            
+                            <th>05/07</th>
+                            
+                        </tr>
+                       
+                <tr class="data-row">
+                    <th><div class="truncate">IPhone (AppleCoreMedia)
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">110</div></td>
+                    
+                        <td>
+                            <div class="unique">16</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">11</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">21</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">26</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">19</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="data-row">
+                    <th><div class="truncate">iTunes - Unspecified OS
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">14</div></td>
+                    
+                        <td>
+                            <div class="unique">2</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">7</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">5</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="data-row">
+                    <th><div class="truncate">iTunes - Windows
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">10</div></td>
+                    
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">2</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="data-row">
+                    <th><div class="truncate">IPod (AppleCoreMedia)
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">8</div></td>
+                    
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">8</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="data-row">
+                    <th><div class="truncate">iTunes - Macintosh
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">7</div></td>
+                    
+                        <td>
+                            <div class="unique">3</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">2</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">1</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="data-row">
+                    <th><div class="truncate">IPad (AppleCoreMedia)
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">5</div></td>
+                    
+                        <td>
+                            <div class="unique">2</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">1</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">2</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="total-row">
+                <th>Total</th>
+                <td class="total-cell"><div class="unique">154</div></td>
+                
+                        <td>
+                            <div class="unique">23</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">11</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">23</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">34</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">37</div>
+                        </td>
+                        
+                            <td><div class="unique">-</div></td>
+                        
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+
+    
+    <div class="row"><div class="column span-12">
+        <h3>Other Sources</h3>
+    </div></div>
+    
+
+    <div class="row">
+    
+        <div class="column span-12">
+            <table width="100%">
+                
+                        <tbody><tr class="group-row">
+                            <th class="group-label">
+                                Source
+                            </th>
+                            <th>All Time</th>
+                            
+                            
+                            <th>04/02</th>
+                            
+                            <th>04/09</th>
+                            
+                            <th>04/16</th>
+                            
+                            <th>04/23</th>
+                            
+                            <th>04/30</th>
+                            
+                            <th>05/07</th>
+                            
+                        </tr>
+                       
+                <tr class="data-row">
+                    <th><div class="truncate">UNKNOWN
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">197</div></td>
+                    
+                        <td>
+                            <div class="unique">12</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">36</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">63</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">28</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">11</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="data-row">
+                    <th><div class="truncate">Mozilla - Windows
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">17</div></td>
+                    
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">8</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">9</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="data-row">
+                    <th><div class="truncate">Mozilla - Android
+                    </div></th>
+                    
+                    <td class="total-cell"><div class="unique">8</div></td>
+                    
+                        <td><div class="unique">-</div></td>
+                        
+                        <td>
+                            <div class="unique">8</div>
+                        </td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                        <td><div class="unique">-</div></td>
+                        
+                </tr>
+                
+                <tr class="total-row">
+                <th>Total</th>
+                <td class="total-cell"><div class="unique">222</div></td>
+                
+                        <td>
+                            <div class="unique">12</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">52</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">63</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">28</div>
+                        </td>
+                        
+                        <td>
+                            <div class="unique">20</div>
+                        </td>
+                        
+                            <td><div class="unique">-</div></td>
+                        
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+
+    
+
+<div class="row">    
+    <div class="column span-12 attribution">
+        Any use of data provided by Podtrac, including the data provided in this report or summaries of it, must be
+        accompanied by<br> this note on each page the data is presented:
+        Measurement data provided by Podtrac.
+    </div>
+</div>
+
+
+</div>
+
+
+  </div>
+
+</div>
+<div class="foot">
+    
+
+    <div class="row">
+        <div class="column span-12">
+            <div id="legal">
+                
+                
+                <div id="copyright">© 2005-2018 Podtrac, Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12466535-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+<script src="/javascript/Client.js?v=9a2519732534fb0919d8aaa572cd536c" type="text/javascript"></script>
+    
+    
+    
+
+
+
+
+</body></html>

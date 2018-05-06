@@ -87,6 +87,7 @@ def navigation_loop(bool):
                 nav_element = driver.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div/div[1]/ul/li[2]/a')
                 nav_element.click()  # Clicks the 'By Source' option
                 third = False
+                bool = False
             except (exceptions.StaleElementReferenceException, exceptions.NoSuchElementException):
                 third = True
                 print('Third waiting')
@@ -94,9 +95,10 @@ def navigation_loop(bool):
 
 
 navigation_loop(True)
-
+print('loop ended')
 options = Select(driver.find_element_by_id('podcastList'))
 options.select_by_visible_text('Celestial Blood')
+print('Done selecting, now getting html source')
 
 html_source = driver.page_source
 

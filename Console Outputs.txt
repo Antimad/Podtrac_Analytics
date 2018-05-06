@@ -1,1 +1,2 @@
-What is your Podtrac username?What is your Podtrac password?
+What is your Podtrac username?What is your Podtrac password?loop ended
+Done selecting, now getting html source
