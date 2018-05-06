@@ -158,3 +158,75 @@ Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openv
 [Child 13
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1525635007463	geckodriver	INFO	Listening on 127.0.0.1:54998
+1525635010636	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525635011314	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525635012924	Marionette	INFO	Listening on port 55010
+1525635013850	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 11980, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 13524, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 13524, Chrome_ChildThread] WARNING: pipe error: 109: file z:/[Parent 11980, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+rs\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525635981824	Marionette	INFO	Listening on port 56380
+1525635982928	Marionette	WARN	TLS certificate errors will be ignored for this session
+1525636184563	geckodriver	INFO	Listening on 127.0.0.1:63345
+1525636187676	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525636188224	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525636189730	Marionette	INFO	Listening on port 63357
+1525636189768	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 12796, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 9532, Chrome_ChildTh
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1525636374378	geckodriver	INFO	Listening on 127.0.0.1:61376
+1525636377593	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525636378120	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525636379632	Marionette	INFO	Listening on port 61388
+1525636379660	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 13632, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 13632, Chrome_Ch
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ppData\Local\openvr\openvrpaths.vrpath
+1525636515592	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525636517180	Marionette	INFO	Listening on port 61653
+1525636518192	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 7000, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 10980, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 10980, Chro[Child 9400, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1525636717919	geckodriver::marionette	ERROR	Failed to kill browser process
+1525637400854	geckodriver	INFO	Listening on 127.0.0.1:63095
+1525637404009	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525637404542	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+Unable to read VR Path Registry from C:\Users\Uchenna\AppData\Local\openvr\openvrpaths.vrpath
+1525637406072	Marionette	INFO	Listening on port 63107
+1525637407152	Marionette	WARN	TLS certificate errors will be ignored for this session
