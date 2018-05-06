@@ -45,6 +45,7 @@ element.send_keys(Keys.ENTER)
 
 # Page is logged in
 
+
 def find(pointer):
     elem = pointer.find_element_by_xpath('//*[@id="tabs"]/ul/li[2]/a')
     if elem:
@@ -58,14 +59,43 @@ def find(pointer):
 time.sleep(4)
 
 
-element = driver.find_element_by_xpath('/html/body/div[3]/div/div/div/ul/li[1]/a')
-element.click()                 # Clicks the Measurement Reports button
+def navigation_loop(bool):
+    first = True
+    second = True
+    third = True
+    while bool:
+        if first:
+            try:
+                nav_element = driver.find_element_by_xpath('//*[@id="tabs"]/ul/li[2]/a')
+                nav_element.click()                 # Clicks 'Audience' tab, top right
+                first = False
+            except (exceptions.StaleElementReferenceException, exceptions.NoSuchElementException):
+                first = True
+                print('First waiting')
+                time.sleep(2)
+        if second:
+            try:
+                nav_element = driver.find_element_by_xpath('/html/body/div[3]/div/div/div/ul/li[1]/a')
+                nav_element.click()                 # Clicks the Measurement Reports button
+                second = False
+            except (exceptions.StaleElementReferenceException, exceptions.NoSuchElementException):
+                second = True
+                print('Second waiting')
+                time.sleep(2)
+        if third:
+            try:
+                nav_element = driver.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div/div[1]/ul/li[2]/a')
+                nav_element.click()  # Clicks the 'By Source' option
+                third = False
+            except (exceptions.StaleElementReferenceException, exceptions.NoSuchElementException):
+                third = True
+                print('Third waiting')
+                time.sleep(2)
 
-# Todo: Fix the staling exceptions...
-# May need to click the website in between to keep it active?
-element = element.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div/div[1]/ul/li[2]/a')
-element.click()                 # Clicks the 'By Source' option
 
+navigation_loop(True)
+
+time.sleep(5)
 options = Select(driver.find_element_by_id('podcastList'))
 options.select_by_visible_text('Celestial Blood')
 
